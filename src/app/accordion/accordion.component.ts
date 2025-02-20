@@ -18,6 +18,7 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 @Component({
   selector: "app-accordion",
   imports: [CdkAccordionModule],
+  // Ensures that the items (CdkAccordionItem) recognize the UiAccordionComponent as their accordion.
   providers: [{ provide: CDK_ACCORDION, useExisting: AccordionComponent }],
 
   template: ` <cdk-accordion class="example-accordion">
@@ -26,6 +27,7 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 })
 export class AccordionComponent extends CdkAccordion {
   constructor() {
+    // Calls the parent class (CdkAccordion) constructor
     super();
   }
 }
